@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社友心 - 電気・水道・リフォーム・エアコン工事の総合サービス | 栃木県宇都宮〜県北</title>
+    <meta name="description" content="栃木県宇都宮市から県北エリアの電気工事・水道設備・リフォーム・エアコン工事はお任せください。確かな技術と実績で安心サービスをお届けします。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --primary-blue-light: #3b82f6;
+            --primary-blue-dark: #1e3a8a;
+            --secondary-blue: #2563eb;
+            --accent-blue: #0ea5e9;
+            --light-blue: #eff6ff;
+            --very-light-blue: #f0f9ff;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --success: #059669;
+            --warning: #d97706;
+            --shadow-sm: 0 1px 2px 0 rgba(30, 64, 175, 0.05);
+            --shadow: 0 1px 3px 0 rgba(30, 64, 175, 0.1), 0 1px 2px 0 rgba(30, 64, 175, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(30, 64, 175, 0.1), 0 2px 4px -1px rgba(30, 64, 175, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(30, 64, 175, 0.1), 0 4px 6px -2px rgba(30, 64, 175, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(30, 64, 175, 0.1), 0 10px 10px -5px rgba(30, 64, 175, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-blue);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scale-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .nav-tagline {
+            color: var(--primary-blue-light);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue-dark);
+            background: var(--very-light-blue);
+        }
+
+        .cta-link {
+            background: var(--primary-blue) !important;
+            color: var(--white) !important;
+            padding: 0.8rem 2rem !important;
+            font-weight: 600;
+            border-radius: 25px;
+        }
+
+        .cta-link:hover {
+            background: var(--primary-blue-dark) !important;
+            color: var(--white) !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            color: var(--primary-blue);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.2s forwards;
+        }
+
+        .highlight {
+            color: var(--secondary-blue);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--primary-blue-light);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.4s forwards;
+            font-weight: 500;
+        }
+
+        .hero-services {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.6s forwards;
+        }
+
+        .hero-service {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            border: 2px solid var(--light-blue);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hero-service:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--primary-blue);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .hero-service span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.8s forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: inherit;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-large {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+        }
+
+        .hero-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.5rem;
+            background: var(--light-blue);
+            border-radius: 50px;
+            border: 2px solid var(--primary-blue-light);
+            justify-content: center;
+        }
+
+        .hero-phone i {
+            color: var(--warning);
+            animation: pulse 2s infinite;
+            font-size: 1.2rem;
+        }
+
+        .hero-phone span {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue-dark);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-contact-info {
+            background: var(--very-light-blue);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid var(--light-blue);
+        }
+
+        .hero-contact-info h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-highlight {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-highlight .label {
+            color: var(--primary-blue-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-highlight .value {
+            color: var(--primary-blue-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-blue);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-blue-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            background: var(--gray-50);
+            position: relative;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gray-200);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-blue);
+        }
+
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 20px;
+            background: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievement-text {
+            color: var(--primary-blue-light);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .area-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--light-blue);
+        }
+
+        .area-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .area-main h4 {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .area-main p {
+            color: var(--primary-blue-light);
+            font-weight: 500;
+        }
+
+        .area-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--light-blue);
+            border-radius: 15px;
+            color: var(--primary-blue-dark);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-blue);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-blue);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            font-size: 1.8rem;
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            position: relative;
+            padding-left: 2rem;
+            color: var(--primary-blue-light);
+            font-weight: 500;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .feature-tag {
+            padding: 0.5rem 1rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--gray-50);
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 15px;
+            background: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .pricing-list {
+            list-style: none;
+        }
+
+        .pricing-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-blue-light);
+            font-weight: 500;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--light-blue);
+            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+            color: var(--primary-blue-dark);
+            font-weight: 500;
+        }
+
+        /* Reasons Section */
+        .reasons {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .reason-card {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .reason-number {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--warning);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .reason-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .reason-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .reason-text {
+            color: var(--primary-blue-light);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--gray-50);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 2px solid var(--gray-200);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--very-light-blue);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .faq-icon {
+            color: var(--primary-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: var(--very-light-blue);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 2rem;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: var(--primary-blue-light);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* Company Section */
+        .company {
+            background: var(--white);
+        }
+
+        .company-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .company-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--light-blue);
+        }
+
+        .company-card:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .company-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .company-table th,
+        .company-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            text-align: left;
+        }
+
+        .company-table th {
+            font-weight: 600;
+            color: var(--primary-blue);
+            width: 40%;
+        }
+
+        .company-table td {
+            color: var(--primary-blue-light);
+            font-weight: 500;
+        }
+
+        .contact-info {
+            space-y: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .contact-item strong {
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item p {
+            color: var(--primary-blue-light);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .company-certifications {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--light-blue);
+        }
+
+        .company-certifications:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .company-certifications h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .certification-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        .certification-item:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+
+        .certification-item i {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        .certification-item:hover i {
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gray-50);
+            position: relative;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            border: 2px solid var(--light-blue);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-method:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .method-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .method-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .phone-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-hours {
+            color: var(--primary-blue-light);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-note {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .email {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            word-break: break-all;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .required {
+            color: var(--warning);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            background: var(--white);
+            color: var(--primary-blue);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: var(--very-light-blue);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--primary-blue-light);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .privacy-link {
+            color: var(--secondary-blue);
+            text-decoration: none;
+        }
+
+        .privacy-link:hover {
+            text-decoration: underline;
+        }
+
+        .form-submit {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact {
+            space-y: 1rem;
+        }
+
+        .footer-phone,
+        .footer-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-phone i,
+        .footer-area i {
+            color: var(--warning);
+        }
+
+        .footer-services h4,
+        .footer-links h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-services ul,
+        .footer-links ul {
+            list-style: none;
+            space-y: 0.8rem;
+        }
+
+        .footer-services li,
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-services a,
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-services a:hover,
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2rem;
+                box-shadow: var(--shadow-lg);
+                border-radius: 0 0 20px 20px;
+                border: 1px solid var(--gray-200);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-services {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .company-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reason-card {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .hero-phone span {
+                font-size: 1.1rem;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>株式会社友心</h1>
+                    <span class="nav-tagline">電気・水道・リフォーム・エアコン</span>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="#hero" class="nav-link">ホーム</a>
+                    <a href="#services" class="nav-link">サービス</a>
+                    <a href="#achievements" class="nav-link">実績・エリア</a>
+                    <a href="#pricing" class="nav-link">料金</a>
+                    <a href="#reasons" class="nav-link">選ばれる理由</a>
+                    <a href="#faq" class="nav-link">よくある質問</a>
+                    <a href="#contact" class="nav-link cta-link">お問い合わせ</a>
+                </div>
+                
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">栃木県の<span class="highlight">総合設備工事</span>はお任せください</h1>
+                <p class="hero-subtitle">電気工事・水道設備・リフォーム・エアコン<br>4つの専門技術で安心をお届け</p>
+                
+                <div class="hero-services">
+                    <div class="hero-service scale-hover">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <span>電気工事</span>
+                    </div>
+                    <div class="hero-service scale-hover">
+                        <div class="service-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <span>水道設備</span>
+                    </div>
+                    <div class="hero-service scale-hover">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span>リフォーム</span>
+                    </div>
+                    <div class="hero-service scale-hover">
+                        <div class="service-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <span>エアコン</span>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary btn-large">
+                        <i class="fas fa-phone"></i>
+                        今すぐお問い合わせ
+                    </a>
+                    <div class="hero-phone">
+                        <i class="fas fa-phone"></i>
+                        <span>090-2176-0945</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-contact-info">
+                <h3>お問い合わせ</h3>
+                <div class="contact-highlight">
+                    <span class="label">電話番号</span>
+                    <span class="value">090-2176-0945</span>
+                </div>
+                <div class="contact-highlight">
+                    <span class="label">受付時間</span>
+                    <span class="value">8:00〜22:00（土日祝対応可）</span>
+                </div>
+                <div class="contact-highlight">
+                    <span class="label">緊急対応</span>
+                    <span class="value">24時間対応</span>
+                </div>
+                <div class="contact-highlight">
+                    <span class="label">対応エリア</span>
+                    <span class="value">栃木県北全域</span>
+                </div>
+                <div class="contact-highlight">
+                    <span class="label">見積もり</span>
+                    <span class="value">無料</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">サービス</h2>
+                <p class="section-subtitle fade-in">4つの専門分野で総合的にサポート</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- 電気工事 -->
+                <div class="service-card fade-in scale-hover">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="service-title">電気工事</h3>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-list">
+                            <li>住宅・店舗の配線工事</li>
+                            <li>照明器具の取付・交換</li>
+                            <li>コンセント・スイッチ工事</li>
+                            <li>分電盤の設置・更新</li>
+                            <li>電気設備の点検・修理</li>
+                        </ul>
+                        <div class="service-features">
+                            <span class="feature-tag">電気工事士資格保有</span>
+                            <span class="feature-tag">安全第一</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 水道設備 -->
+                <div class="service-card fade-in scale-hover">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="service-title">水道設備</h3>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-list">
+                            <li>給排水管の設置・修理</li>
+                            <li>水回り設備の交換</li>
+                            <li>トイレ・洗面台の工事</li>
+                            <li>漏水の緊急対応</li>
+                            <li>配管の点検・メンテナンス</li>
+                        </ul>
+                        <div class="service-features">
+                            <span class="feature-tag">24h緊急対応</span>
+                            <span class="feature-tag">水道局指定工事店</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- リフォーム -->
+                <div class="service-card fade-in scale-hover">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="service-title">リフォーム</h3>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-list">
+                            <li>キッチン・浴室リフォーム</li>
+                            <li>内装・外装工事</li>
+                            <li>間取り変更・増改築</li>
+                            <li>バリアフリー改修</li>
+                            <li>住宅全体のリノベーション</li>
+                        </ul>
+                        <div class="service-features">
+                            <span class="feature-tag">デザイン提案</span>
+                            <span class="feature-tag">工期短縮</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- エアコン -->
+                <div class="service-card fade-in scale-hover">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3 class="service-title">エアコン</h3>
+                    </div>
+                    <div class="service-content">
+                        <ul class="service-list">
+                            <li>エアコンの取付・交換</li>
+                            <li>室外機の設置工事</li>
+                            <li>クリーニング・メンテナンス</li>
+                            <li>故障診断・修理</li>
+                            <li>業務用エアコン対応</li>
+                        </ul>
+                        <div class="service-features">
+                            <span class="feature-tag">全メーカー対応</span>
+                            <span class="feature-tag">即日対応可</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Area Section -->
+    <section id="achievements" class="achievements section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">実績・対応エリア</h2>
+                <p class="section-subtitle fade-in">確かな実績と豊富な経験で地域に貢献</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in scale-hover">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-number">500+</h3>
+                        <p class="achievement-text">施工実績</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in scale-hover">
+                    <div class="achievement-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-number">15年</h3>
+                        <p class="achievement-text">業界経験</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in scale-hover">
+                    <div class="achievement-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-number">98%</h3>
+                        <p class="achievement-text">お客様満足度</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in scale-hover">
+                    <div class="achievement-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-number">全域</h3>
+                        <p class="achievement-text">栃木県北対応</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="area-section fade-in">
+                <h3 class="area-title">対応エリア</h3>
+                <div class="area-content">
+                    <div class="area-main">
+                        <h4>栃木県 宇都宮市〜県北全域</h4>
+                        <p>宇都宮市、日光市、那須塩原市、大田原市、矢板市、那須烏山市、那須町、那珂川町、塩谷町、高根沢町 他</p>
+                    </div>
+                    <div class="area-note">
+                        <p><i class="fas fa-info-circle"></i> その他のエリアもお気軽にご相談ください</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">料金</h2>
+                <p class="section-subtitle fade-in">明確で分かりやすい料金体系</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in scale-hover">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">電気工事</h3>
+                        <div class="pricing-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>コンセント増設：<span class="price">8,800円〜</span></li>
+                        <li>スイッチ交換：<span class="price">5,500円〜</span></li>
+                        <li>照明器具取付：<span class="price">7,700円〜</span></li>
+                        <li>分電盤交換：<span class="price">55,000円〜</span></li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card fade-in scale-hover">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">水道設備</h3>
+                        <div class="pricing-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>蛇口交換：<span class="price">11,000円〜</span></li>
+                        <li>トイレ交換：<span class="price">88,000円〜</span></li>
+                        <li>給湯器交換：<span class="price">165,000円〜</span></li>
+                        <li>配管修理：<span class="price">8,800円〜</span></li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card fade-in scale-hover">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">リフォーム</h3>
+                        <div class="pricing-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>キッチンリフォーム：<span class="price">550,000円〜</span></li>
+                        <li>浴室リフォーム：<span class="price">880,000円〜</span></li>
+                        <li>内装工事：<span class="price">330,000円〜</span></li>
+                        <li>外壁塗装：<span class="price">770,000円〜</span></li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card fade-in scale-hover">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">エアコン</h3>
+                        <div class="pricing-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                    </div>
+                    <ul class="pricing-list">
+                        <li>標準取付工事：<span class="price">16,500円〜</span></li>
+                        <li>エアコンクリーニング：<span class="price">8,800円〜</span></li>
+                        <li>室外機移設：<span class="price">22,000円〜</span></li>
+                        <li>故障診断：<span class="price">3,300円〜</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pricing-note fade-in">
+                <p><i class="fas fa-info-circle"></i> 上記は基本料金です。現地調査後、正確なお見積もりをご提示いたします。</p>
+                <p><i class="fas fa-gift"></i> 複数工事同時ご依頼で割引あり！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section id="reasons" class="reasons section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">選ばれる理由</h2>
+                <p class="section-subtitle fade-in">お客様に選ばれ続ける5つの理由</p>
+            </div>
+            
+            <div class="reasons-grid">
+                <div class="reason-card fade-in scale-hover">
+                    <div class="reason-number">01</div>
+                    <div class="reason-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="reason-title">豊富な資格と技術力</h3>
+                    <p class="reason-text">電気工事士、給排水設備工事など、各分野の専門資格を持つスタッフが確実な施工を行います。</p>
+                </div>
+
+                <div class="reason-card fade-in scale-hover">
+                    <div class="reason-number">02</div>
+                    <div class="reason-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="reason-title">迅速な対応</h3>
+                    <p class="reason-text">お急ぎの工事や緊急対応も可能。お客様のご都合に合わせて柔軟にスケジュール調整いたします。</p>
+                </div>
+
+                <div class="reason-card fade-in scale-hover">
+                    <div class="reason-number">03</div>
+                    <div class="reason-icon">
+                        <i class="fas fa-yen-sign"></i>
+                    </div>
+                    <h3 class="reason-title">明確な料金体系</h3>
+                    <p class="reason-text">事前にしっかりとお見積もりを提示。追加料金は一切発生しません。安心してご依頼いただけます。</p>
+                </div>
+
+                <div class="reason-card fade-in scale-hover">
+                    <div class="reason-number">04</div>
+                    <div class="reason-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="reason-title">ワンストップサービス</h3>
+                    <p class="reason-text">4つの専門分野を一社で対応。複数の業者に依頼する手間が省け、コストも削減できます。</p>
+                </div>
+
+                <div class="reason-card fade-in scale-hover">
+                    <div class="reason-number">05</div>
+                    <div class="reason-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="reason-title">地域密着の安心感</h3>
+                    <p class="reason-text">栃木県北を拠点とした地域密着型サービス。アフターフォローも万全で、長期的にサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">よくある質問</h2>
+                <p class="section-subtitle fade-in">お客様からよくいただくご質問</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>見積もりは無料ですか？</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、お見積もりは完全無料です。現地調査からお見積もり提示まで、一切費用はかかりません。お気軽にご相談ください。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>緊急対応は可能ですか？</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>水漏れや停電などの緊急事態には24時間対応いたします。まずはお電話（090-2176-0945）でご連絡ください。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>工事期間はどのくらいかかりますか？</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>工事内容により異なります。小規模な工事は1日、リフォーム工事は1週間〜1ヶ月程度が目安です。事前に詳しい工期をお伝えします。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>保証はありますか？</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>工事内容に応じて1年〜10年の保証をお付けしています。アフターサービスも充実しており、安心してご利用いただけます。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>支払い方法は何がありますか？</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>現金、銀行振込、クレジットカード決済に対応しています。工事規模に応じて分割払いのご相談も承ります。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>対応エリア外でも工事は可能ですか？</h3>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>対応エリア外でも、工事内容によっては対応可能な場合があります。まずはお気軽にご相談ください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Info Section -->
+    <section id="company" class="company section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">会社情報</h2>
+                <p class="section-subtitle fade-in">株式会社友心について</p>
+            </div>
+            
+            <div class="company-content">
+                <div class="company-info">
+                    <div class="company-card fade-in scale-hover">
+                        <h3>会社概要</h3>
+                        <table class="company-table">
+                            <tr>
+                                <th>会社名</th>
+                                <td>株式会社友心</td>
+                            </tr>
+                            <tr>
+                                <th>代表者</th>
+                                <td>代表取締役 仲野 仁</td>
+                            </tr>
+                            <tr>
+                                <th>設立</th>
+                                <td>2009年4月</td>
+                            </tr>
+                            <tr>
+                                <th>資本金</th>
+                                <td>1,000万円</td>
+                            </tr>
+                            <tr>
+                                <th>営業時間</th>
+                                <td>8:00〜22:00（土日祝対応可）</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="company-card fade-in scale-hover">
+                        <h3>連絡先</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>電話番号</strong>
+                                    <p>090-2176-0945</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>メールアドレス</strong>
+                                    <p>gg09080430@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-fax"></i>
+                                <div>
+                                    <strong>FAX番号</strong>
+                                    <p>0287-44-3295</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>所在地</strong>
+                                    <p>〒329-2136<br>栃木県矢板市東町1220−1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-certifications fade-in scale-hover">
+                    <h3>保有資格・許可</h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>第一種電気工事士</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>第二種電気工事士</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>給水装置工事主任技術者</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>排水設備工事責任技術者</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>建設業許可（電気・管・内装）</span>
+                        </div>
+                        <div class="certification-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>冷媒フロン類取扱技術者</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">お問い合わせ</h2>
+                <p class="section-subtitle fade-in">お気軽にご相談ください</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info-section">
+                    <div class="contact-methods">
+                        <div class="contact-method fade-in scale-hover">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>お電話でのお問い合わせ</h3>
+                                <p class="phone-number">090-2176-0945</p>
+                                <p class="contact-hours">受付時間：8:00〜22:00（土日祝対応可）</p>
+                                <p class="contact-note">緊急時は24時間対応いたします</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method fade-in scale-hover">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h3>メールでのお問い合わせ</h3>
+                                <p>下記フォームまたは直接メールでご連絡ください</p>
+                                <p class="email">gg09080430@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form class="contact-form fade-in" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="name">お名前 <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">メールアドレス <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">電話番号</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">ご希望サービス <span class="required">*</span></label>
+                            <select id="service" name="service" required>
+                                <option value="">選択してください</option>
+                                <option value="電気工事">電気工事</option>
+                                <option value="水道設備">水道設備</option>
+                                <option value="リフォーム">リフォーム</option>
+                                <option value="エアコン">エアコン</option>
+                                <option value="複数サービス">複数サービス</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgent">緊急度</label>
+                            <select id="urgent" name="urgent">
+                                <option value="通常">通常</option>
+                                <option value="お急ぎ">お急ぎ（1週間以内）</option>
+                                <option value="緊急">緊急（至急対応希望）</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" placeholder="工事内容、ご希望日時、ご質問など詳しくお聞かせください" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacy" required>
+                                <span class="checkmark"></span>
+                                <a href="#privacy" class="privacy-link">プライバシーポリシー</a>に同意します <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                送信する
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <h3>株式会社友心</h3>
+                        <p>電気・水道・リフォーム・エアコン工事の総合サービス</p>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <div class="footer-phone">
+                            <i class="fas fa-phone"></i>
+                            <span>090-2176-0945</span>
+                        </div>
+                        <div class="footer-area">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>栃木県矢板市東町1220−1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="#services">電気工事</a></li>
+                        <li><a href="#services">水道設備</a></li>
+                        <li><a href="#services">リフォーム</a></li>
+                        <li><a href="#services">エアコン</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>情報</h4>
+                    <ul>
+                        <li><a href="#achievements">実績・エリア</a></li>
+                        <li><a href="#pricing">料金</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#company">会社情報</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 株式会社友心. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
+            });
+        }
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const wasActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for fade in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in animation
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = 'var(--shadow-lg)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'var(--shadow-sm)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Form submission handling
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Basic form validation
+                const requiredFields = this.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = '#dc2626';
+                    } else {
+                        field.style.borderColor = 'var(--gray-200)';
+                    }
+                });
+                
+                if (!isValid) {
+                    e.preventDefault();
+                    alert('必須項目をすべて入力してください。');
+                    return;
+                }
+
+                // Show loading state
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+                submitButton.disabled = true;
+
+                // Re-enable button after 3 seconds (in case of error)
+                setTimeout(() => {
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                }, 3000);
+            });
+        }
+
+        // Counter animation for achievement numbers
+        const counterAnimation = (element, target) => {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                if (element.textContent.includes('%')) {
+                    element.textContent = Math.floor(current) + '%';
+                } else if (element.textContent.includes('+')) {
+                    element.textContent = Math.floor(current) + '+';
+                } else if (element.textContent.includes('年')) {
+                    element.textContent = Math.floor(current) + '年';
+                } else if (element.textContent.includes('全域')) {
+                    // Skip animation for "全域"
+                    return;
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 20);
+        };
+
+        // Start counter animations when achievement section is visible
+        const achievementObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.achievement-number');
+                    numbers.forEach(number => {
+                        const text = number.textContent;
+                        if (text.includes('500+')) {
+                            counterAnimation(number, 500);
+                        } else if (text.includes('15年')) {
+                            counterAnimation(number, 15);
+                        } else if (text.includes('98%')) {
+                            counterAnimation(number, 98);
+                        }
+                        // Skip "全域" as it doesn't need counter animation
+                    });
+                    achievementObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const achievementsSection = document.querySelector('.achievements-grid');
+        if (achievementsSection) {
+            achievementObserver.observe(achievementsSection);
+        }
+
+        // Service card hover effects
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.service-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1.1)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.service-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
